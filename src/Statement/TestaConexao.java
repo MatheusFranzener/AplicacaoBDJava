@@ -1,10 +1,12 @@
+package Statement;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class TestaConexao {
     public static void main(String[] args) throws SQLException {
-        Contato contato = new Contato("Leo Rafaelli", "leo@gmail.com", "999999999", 18);
+        Contato contato = new Contato("Matheus Hohmann", "math@gmail.com", "999999999", 18);
 
         String sql = "insert into contatos (nome, email, telefone, idade) values " +
                 "('" + contato.getNome() + "', '" + contato.getEmail() + "', '" + contato.getIdade() +

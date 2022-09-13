@@ -1,3 +1,5 @@
+package Statement;
+
 import java.util.Objects;
 
 public class Contato {
@@ -24,7 +26,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Contato{" +
+        return "Statement.Contato{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +

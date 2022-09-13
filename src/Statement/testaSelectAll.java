@@ -1,12 +1,13 @@
+package Statement;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TestaSelect {
+public class testaSelectAll {
     public static void main(String[] args) throws SQLException {
-        int id = 2;
-        String sql = "select * from contatos where id = " + id;
+        String sql = "select * from contatos";
 
         Conexao conexao = new Conexao();
         Connection connection = conexao.conectaBD();
@@ -14,12 +15,12 @@ public class TestaSelect {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
 
-        if (resultSet != null && resultSet.next()) {
+        while (resultSet != null && resultSet.next()) {
             Contato contato = new Contato(
                     resultSet.getInt("id"),
                     resultSet.getString("nome"),
                     resultSet.getString("email"),
-                    resultSet.getString("endereco"),
+                    resultSet.getString("telefone"),
                     resultSet.getInt("idade")
             );
             System.out.println("contato:" + contato);
